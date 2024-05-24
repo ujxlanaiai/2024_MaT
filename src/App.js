@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { CallGPT } from './gpt';
 import SignatureCanvasComponent from './SignatureCanvasComponent'; // Import the SignatureCanvasComponent
 import ClipboardImageUploader from './ClipboardImageUploader'; // Import the ClipboardImageUploader
 import './design.css';
@@ -40,12 +39,6 @@ const Dictaphone = () => {
   const startListening = () => SpeechRecognition.startListening({ language: 'ko', continuous: true });
 
 
-  /*GPT call -> 유료라 실패*/
-  const handleClickAPICall = async () => {
-    await CallGPT();
-  };
-
-
   /*HTML*/
   return (
     <div>
@@ -59,7 +52,6 @@ const Dictaphone = () => {
           <button onClick={startListening}>Start</button>
           <button onClick={SpeechRecognition.stopListening}>Stop</button>
           <button onClick={resetTranscript}>Reset</button>
-          <button onClick={handleClickAPICall}>GPT Call</button>
           <p>{transcript}</p>
         </div>
         <div className="function-box">
