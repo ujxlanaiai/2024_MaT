@@ -1,22 +1,37 @@
-/* Dictaphone.css */
-
-.header {
-    text-align: center;
+.dictaphone-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
-.header h1 {
-    font-size: 36px;
-    color: #007bff;
+.function-box.handwriting {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
-.dictaphone-container {
-    display: flex;
-    justify-content: space-around;
+.function-box.upload-image {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.function-box.speech {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.function-box.latex-box {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+}
+
+.ggb-box {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
 }
 
 .function-box {
-    flex: 1;
     margin: 20px;
     padding: 20px;
     background-color: #f9f9f9;
@@ -43,4 +58,33 @@
 
 .function-box button:hover {
     background-color: #0056b3;
+}
+
+.latex-box {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #bdb7ff, #a5f8e0);
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.latex-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.left-section,
+.right-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+#ggb-element {
+    width: 100%;
+    height: 700px;
 }

@@ -1,4 +1,3 @@
-// src/SignatureCanvasComponent.js
 import React, { useRef } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 
@@ -9,12 +8,39 @@ const SignatureCanvasComponent = () => {
         sigCanvas.current.clear();
     };
 
-    const download = () => {
-        const dataURL = sigCanvas.current.getTrimmedCanvas().toDataURL('image/png');
-        const link = document.createElement('a');
-        link.href = dataURL;
-        link.download = 'signature.png';
-        link.click();
+    const sendImageToBackend = async () => {
+        const trimmedCanvas = sigCanvas.current.getTrimmedCanvas();
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = trimmedCanvas.width;
+        tempCanvas.height = trimmedCanvas.height;
+
+        const ctx = tempCanvas.getContext('2d');
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+        ctx.drawImage(trimmedCanvas, 0, 0);
+
+        const dataURL = tempCanvas.toDataURL('image/png');
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ image: dataURL }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const responseData = await response.json();
+            console.log('Response from backend:', responseData);
+
+            // Handle the response data as needed
+        } catch (error) {
+            console.error('Error sending image to backend:', error);
+        }
     };
 
     return (
@@ -22,11 +48,11 @@ const SignatureCanvasComponent = () => {
             <SignatureCanvas
                 ref={sigCanvas}
                 penColor="black"
-                canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }}
+                canvasProps={{ width: 800, height: 400, className: 'sigCanvas' }} // Adjust width and height here
             />
             <div className="buttons">
                 <button onClick={clear}>Clear</button>
-                <button onClick={download}>Finish</button>
+                <button onClick={sendImageToBackend}>Convert</button>
             </div>
         </div>
     );
