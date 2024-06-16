@@ -1,47 +1,122 @@
-.dictaphone-container {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+.header {
+    display: flex;
+    /* Use Flexbox for alignment */
+    justify-content: space-between;
+    /* Space elements evenly */
+    align-items: center;
+    /* Center items vertically */
+    margin-bottom: -10px;
+    margin-left: 60px;
+    padding-right: 20px;
+    /* Add padding to ensure space on the right */
+}
+
+.header h1 {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.custom-font {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 60px;
+    background: linear-gradient(135deg, #857aff, #5bd2b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Ensures text remains visible */
+}
+
+.user {
+    margin-left: auto;
+    /* Push the .user div to the right */
+}
+
+.user h2 {
+    margin-right: 340px;
+    /* Reset margin for alignment */
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    font-style: normal;
+    margin-top: 20px;
+}
+
+.profile-image {
+    position: absolute;
+    width: 5%;
+    left: 870px;
+    top: 19px;
+}
+
+.mathgirl-image {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    top: 7px;
+    /* Specify the unit (e.g., pixels) */
+    left: 1220px;
+    /* Specify the unit (e.g., pixels) */
+}
+
+body {
+    /*
+    background: linear-gradient(135deg, #ccebe8, #77c3b0);
+    */
+    background-color: #E6E9F2;
+    /* Change this to your desired background color */
+    margin: 0;
+    padding: 0;
+    /* Optional: Set a default font */
+}
+
+
+.container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
     gap: 20px;
+    padding: 20px;
+    margin-bottom: 0px;
+    height: 580px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    /*
+    background-color: #f9f9f9;
+    margin: 10px;
+    border-radius: 30px;
+    height: 580px;
     margin-bottom: 20px;
-}
-
-.function-box.handwriting {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-
-.function-box.upload-image {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
-.function-box.speech {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-}
-
-.function-box.latex-box {
-    grid-column: 1 / 4;
-    grid-row: 2 / 3;
-}
-
-.ggb-box {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
+    */
 }
 
 .function-box {
-    margin: 20px;
+    margin: 2px;
     padding: 20px;
     background-color: #f9f9f9;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+
 }
 
 .function-box h2 {
     margin-bottom: 10px;
+    font-weight: 550;
+    font-style: normal;
+
+}
+
+.function-box .button-container {
+    margin-top: 120px;
 }
 
 .function-box button {
@@ -50,41 +125,104 @@
     font-size: 16px;
     cursor: pointer;
     border: none;
-    border-radius: 5px;
-    background-color: #007bff;
+    border-radius: 20px;
+    background-color: #55789e;
     color: #fff;
     transition: background-color 0.3s;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .function-box button:hover {
-    background-color: #0056b3;
+    background-color: #002b5a;
+}
+
+.clipboard-uploader {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin-top: 60px;
+    text-align: center;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.clipboard-uploader img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.ggb-latex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: calc(100% - 40px);
+    margin-left: 10px;
+}
+
+#ggb-element {
+    flex: 1;
+    width: 100%;
+    height: 700px;
 }
 
 .latex-box {
     display: flex;
     align-items: center;
+    margin: 2px;
     padding: 20px;
     background: linear-gradient(135deg, #bdb7ff, #a5f8e0);
-    border: 2px solid #ccc;
-    border-radius: 15px;
+    border-radius: 30px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     font-size: 18px;
     color: #333;
     transition: transform 0.3s, box-shadow 0.3s;
+    height: 130px;
 }
 
+/*
 .latex-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+*/
 
 .left-section,
 .right-section {
     flex: 1;
     padding: 0 20px;
+    margin-top: -60px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 450;
+    font-style: normal;
 }
 
-#ggb-element {
-    width: 100%;
-    height: 700px;
+.right-container {
+    display: grid;
+    grid-template-areas:
+        "image voice"
+        "latex latex";
+    gap: 20px;
+}
+
+.image-box {
+    grid-area: image;
+    height: 350px;
+}
+
+.voice-box {
+    grid-area: voice;
+    height: 350px;
+}
+
+.latex-box {
+    grid-area: latex;
+}
+
+.transcript {
+    height: 10px;
 }

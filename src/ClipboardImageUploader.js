@@ -19,7 +19,7 @@ const ClipboardImageUploader = () => {
 
     return (
         <div className="clipboard-uploader" onPaste={handlePaste}>
-            <h2>Upload Image from Clipboard</h2>
+            <h4>Upload Image from Clipboard</h4>
             <p>Paste an image here (Ctrl+V / Cmd+V)</p>
             {image && <img src={image} alt="Pasted from clipboard" />}
         </div>
