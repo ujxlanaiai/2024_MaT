@@ -1,10 +1,11 @@
 # 🚀 ma.T
 ## Math.Transpose: Convert your math equations in seconds
 
-👋 This is an web application that can easily convert your math expression with inputs of handwriting, image upload and voice.
+👋 This is an web application that can easily convert your math expression with inputs of ✍️handwriting, 🖼️image upload and 🎙️voice.
 
 ![image](https://github.com/ujxlanaiai/2024_MaT/assets/128073858/6697b598-e72d-44b3-bf55-74979748e3b0)
 
+🚨 This code only includes the frontend of the app.
 
 # Getting Started with Create React App
 
