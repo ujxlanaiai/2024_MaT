@@ -1,12 +1,24 @@
-# 🚀 ma.T
+# 🚀 ma.T  
 ## Math.Transpose: Convert your math equations in seconds
 
-👋 This is an web application that can easily convert your math expression with inputs of ✍️handwriting, 🖼️image upload and 🎙️voice.
-![image](https://github.com/user-attachments/assets/c339fc27-6b9d-445d-a351-6054b11ded13)
+👋 Welcome to **ma.T**, a web application that effortlessly converts your math expressions into LaTeX and more —  
+just by using ✍️ handwriting input, 🖼️ image upload, or 🎙️ voice recognition!
 
-![image](https://github.com/user-attachments/assets/ffdfabab-0a59-423e-a228-098b58f57a2e)
+---
 
-🚨 This code only includes the frontend of the app.
+### Features
+- ✍️ **Handwriting input:** Write your math naturally, and ma.T converts it instantly.  
+- 🖼️ **Image upload:** Upload handwritten or printed math expressions and get instant conversion.  
+- 🎙️ **Voice input:** Speak your math expressions, and ma.T transcribes them for you.
+
+---
+
+### Try it now!  
+![Handwriting input demo](https://github.com/user-attachments/assets/c339fc27-6b9d-445d-a351-6054b11ded13)
+
+![Image & voice input demo](https://github.com/user-attachments/assets/ffdfabab-0a59-423e-a228-098b58f57a2e)
+
+---
 
 # Getting Started with Create React App
 
